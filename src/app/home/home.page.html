@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <div class="nav-bar">
+    <img style="width: 70px;" src="./../../assets\Icono_Edificios-removebg-preview (2).jpg" />
+    <div class="button-container">
+      <span style="margin-right: 10px; color: #000;">@{{this.nameUser}}</span>
+      <ion-button (click)="OnChartClick()" expand="block" fill="clear" shape="round">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+      </ion-button>
+      <ion-button style="color: #ff3c3c;" (click)="OnLogoutClick()" expand="block" fill="clear" shape="round">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <ion-button (click)="OnViewBeautyPhotoClick()"  style="margin-bottom: 30px; background-image: url('./../../assets/edificio_lindo.jpg'); background-size: cover; background-repeat: no-repeat;" expand="block" fill="clear" shape="round">   
+      <span>Cosas lindas</span>
+    </ion-button>
+    <ion-button (click)="OnViewUglyPhotoClick()"  style="background-image: url('./../../assets/edificio_feo.jpg'); background-size: cover; background-repeat: no-repeat;" expand="block" fill="clear" shape="round">
+      <span>Cosas feas</span>
+    </ion-button>
+  </div>
+</ion-content>

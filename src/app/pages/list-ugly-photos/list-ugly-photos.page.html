@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true">
+  <div class="nav-bar">
+    <img style="width: 70px;" src="./../../assets\Icono_Edificios-removebg-preview (2).jpg" />
+    <div class="button-container">
+      <span style="margin-right: 10px;">@{{this.nameUser}}</span>
+      <ion-button (click)="OnChartClick()" expand="block" fill="clear" shape="round">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+      </ion-button>
+      <ion-button style="color: #ff3c3c;" (click)="OnLogoutClick()" expand="block" fill="clear" shape="round">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <div class="button-photo-container">
+    <ion-button (click)="OnTakePictureClick()" expand="block" fill="clear" shape="round">
+      <span>Subir foto</span>
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-button>
+    <ion-button (click)="OnSelectImagesClick()" expand="block" fill="clear" shape="round">
+      <span>Seleccionar</span>
+      <ion-icon name="images-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <div class="container title-container">
+    <h1>Cosas feas</h1>
+  </div>
+  <div class="container padding center" *ngFor="let image of images">
+    <div class="card padding">
+      <div class="container user-date-container">
+        <span>@{{this.resolvedUserNames[image['UIDUser']]}}</span>
+        <span>{{image['UploadDate']}}</span>
+      </div>
+      <div class="container image-container">
+        <img class="image" [src]="'data:image/jpeg;base64,' + this.image['ImageBase64']">
+      </div>
+      <div class="container d-flex container-vote">
+        <div class="vote-container center">
+          <ion-button [class.selected]="imageVotes[image['ImageBase64']]?.like">
+            <img class="vote-button" (click)="likeImage(image)" src="./../../../assets/thumbs-up-outline.svg">
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

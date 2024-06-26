@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="title-container">
+      <ion-title class="title">¡Bienvenido!</ion-title>
+      <p class="sub-title">Inicia sesión en tu cuenta</p>
+    </div>
+  
+   
+  
+    <form [formGroup]="regForm" novalidate>
+      <div class="ion-padding">
+        <ion-item class="login-field">
+          <ion-input style="margin-right: 10px; color: #000;" type="text" placeholder="Correo electrónico" formControlName="email"></ion-input>
+          
+        </ion-item>
+      
+        <ion-item class="login-field">
+          <ion-input style="margin-right: 10px; color: #000;" type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+        </ion-item>
+      </div>
+      <div class="button-container">
+        <ion-button (click)="OnLoginClick()" expand="block" fill="clear" shape="round">
+          Iniciar sesión
+        </ion-button>
+      </div>
+      <div class="buttons-container">
+        <ion-button (click)="OnFillFields('admin@admin.com', '111111')" expand="block" fill="clear" shape="round">
+          1 <ion-icon slot="end" name="person-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="OnFillFields('invitado@invitado.com', '222222')" expand="block" fill="clear" shape="round">
+          2 <ion-icon slot="end" name="person-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="OnFillFields('usuario@usuario.com', '333333')" expand="block" fill="clear" shape="round">
+          3 <ion-icon slot="end" name="person-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>
